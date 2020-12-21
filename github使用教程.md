@@ -28,7 +28,7 @@ github网页.md文件有时候存在图片加载慢或者无法显示，以及�
 
 **（1）图片加载慢或显示失败**
 
-1. 修改hosts文件，windows系统在`C:\Windows\System32\drivers\etc\hosts`目录下，打开后添加以内容
+1. 修改hosts文件，windows系统在`C:\Windows\System32\drivers\etc\`目录下，添加以内容
 
    ```shell
    # GitHub Start 
@@ -62,9 +62,9 @@ github网页.md文件有时候存在图片加载慢或者无法显示，以及�
    # GitHub End
    ```
 
-   如果提醒无权限甚至添加了之后无法保存，可以以管理员身份启动notepad++修改（我的方法），或者先保存到其他地方再移动回去（我没试过）。
+   如果提醒无权限甚至添加了之后无法保存，可以先修改文件属性，取消只读。以管理员身份启动notepad++进行修改。
 
-2. 刷新DNS
+2. 刷新DNS(可选)
 
    win+R输入cmd，启动命令行，输入`ipconfig /flushdns`回车即可
 

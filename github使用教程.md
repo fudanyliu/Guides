@@ -62,11 +62,13 @@ github网页.md文件有时候存在图片加载慢或者无法显示，以及�
    # GitHub End
    ```
 
-   如果提醒无权限甚至添加了之后无法保存，可以先修改文件属性，取消只读。以管理员身份启动notepad++进行修改。
+   如果提醒无权限甚至添加了之后无法保存，可以先修改文件属性，取消只读。以管理员身份启动notepad++进行修改，若无则先新建hosts文件。
 
 2. 刷新DNS(可选)
 
    win+R输入cmd，启动命令行，输入`ipconfig /flushdns`回车即可
+
+
 
 **（2）公式无法显示**
 
@@ -88,4 +90,22 @@ github网页.md文件有时候存在图片加载慢或者无法显示，以及�
 
 3. 最后使用`git push`上传。
 
-    
+## 四、登录与代理问题
+
+git首次登录，在文件夹下执行 git bash here：
+
+```shell
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
+
+当前加载github网页图片需要开启系统代理模式，可能导致git界面显示`port 443`错误，网上多数建议修改`config`文件取消代理，但是将导致以后都需要在关闭代理的情况下执行git，最好的方法是将代理加入到git的`config`文件中：
+
+```shell
+git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080'
+```
+
+[代理设置参考](https://www.cnblogs.com/on-the-way-w/p/14429014.html)、[登录设置参考](https://www.cnblogs.com/crazytata/p/10083716.html)
+
+ 
